@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean 作用域 -->
+    <!-- bean definition here -->
+   	<!-- 注册service对象
+   		: 等同于Java代码中SomeServiceImpl service = new SomeServiceImpl();
+   		这个对象是在spring容器被初始化时创建的 -->
+   	<!-- 
+   		scope="prototype" 原型模式，每次使用时创建一个对象，每次使用时获取不同对象
+   		scope="singleton" (默认使用)单例模式，容器初始化时创建一个对象，每次使用时获取同一对象
+   		scope="request" 对于每次http请求创建一个不同的bean实例(web中使用)
+   		scope="session" 对于每个不同的http session请求创建一个不同的bean实例(web中使用)
+   	-->
+    <bean name="someService" class="com.wmz.ba04.SomeServiceImpl" scope="singleton" />
+
+</beans>
